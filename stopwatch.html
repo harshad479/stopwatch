@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!-- Design by foolishdeveloper.com -->
 <html lang="en">
@@ -21,25 +20,20 @@ body{
 }
 .container{
     background-color: #ffffff;
-    width: 40%;
-    min-width: 500px;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    top: 50%;
-    left: 50%;
-    padding: 20px 0;
-    padding-bottom: 50px;
-    border-radius: 10px;
+    width: 400px;
+    height:45px;
+	padding: 2px 0px 2px 0px;
+    display: flex;
 }
 .timerDisplay{
     position: relative;
-    width: 92%;
+    height:41px;
+    width: 40%;
     background: #ffffff;
     left: 4%;
-    padding: 40px 0;
     font-family: 'Roboto mono',monospace;
     color: #0381bb;
-    font-size: 40px;
+    font-size: 20px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -47,19 +41,19 @@ body{
     box-shadow: 0 0 20px rgba(0,139,253,0.25);
 }
 .buttons{
-    width: 90%;
-    margin: 60px auto 0 auto;
+    width: 50%;
+    margin-left: 20px;
     display: flex;
     justify-content: space-around;
 }
 .buttons button{
-    width: 120px;
-    height: 45px;
+    width: 100px;
+    height: 41px;
     background-color: #205e94;
     color: #ffffff;
     border: none;
     font-family: 'Poppins',sans-serif;
-    font-size: 18px;
+    font-size: 12px;
     border-radius: 5px;
     cursor: pointer;
     outline: none;
@@ -75,7 +69,7 @@ body{
 <body>
     <div class="container">
         <div class="timerDisplay">
-            00 : 00 : 00 : 000
+            00 : 00
         </div>
         <div class="buttons">
             <button id="pauseTimer">Pause</button>
@@ -103,7 +97,7 @@ document.getElementById('pauseTimer').addEventListener('click', ()=>{
 document.getElementById('resetTimer').addEventListener('click', ()=>{
     clearInterval(int);
     [milliseconds,seconds,minutes,hours] = [0,0,0,0];
-    timerRef.innerHTML = '00 : 00 : 00 : 000 ';
+    timerRef.innerHTML = '00 : 00';
 });
 
 function displayTimer(){
@@ -125,7 +119,7 @@ function displayTimer(){
     let s = seconds < 10 ? "0" + seconds : seconds;
     let ms = milliseconds < 10 ? "00" + milliseconds : milliseconds < 100 ? "0" + milliseconds : milliseconds;
 
-    timerRef.innerHTML = ` ${h} : ${m} : ${s} : ${ms}`;
+    timerRef.innerHTML = ` ${m} : ${s}`;
 }
 
 
